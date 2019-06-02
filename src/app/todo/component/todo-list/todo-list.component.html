@@ -1,0 +1,73 @@
+<mat-progress-bar
+  *ngIf="loaded$ | async"
+  mode="indeterminate"
+></mat-progress-bar>
+
+<section class="list-todos" *ngIf="todoList">
+  <div class="search-box">
+    <mat-form-field>
+      <input
+        matInput
+        type="text"
+        placeholder="Search to do..."
+        [matAutocomplete]="auto"
+        [formControl]="searchTerm"
+      />
+      <mat-icon matSuffix>search</mat-icon>
+    </mat-form-field>
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-option
+        *ngFor="let todo of listSearchTodos"
+        [value]="todo.content"
+        [routerLink]="todo.id"
+      >
+        {{ todo.content }}
+      </mat-option>
+    </mat-autocomplete>
+  </div>
+  <div class="filter-todos">
+    <h4>List:</h4>
+    <mat-form-field>
+      <mat-select
+        [formControl]="filterTodos"
+        (ngModelChange)="filter(filterTodos)"
+      >
+        <mat-option value="all">All</mat-option>
+        <mat-option value="accomplished">Accomplished</mat-option>
+        <mat-option value="unfinished">Unfinished</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <table
+    mat-table
+    [dataSource]="filterListTodos"
+    class=" mat-elevation-z8"
+    color="primary"
+  >
+    <ng-container matColumnDef="content" class="mat-column">
+      <th mat-header-cell *matHeaderCellDef>Content</th>
+      <td mat-cell *matCellDef="let el">{{ el.content }}</td>
+    </ng-container>
+    <ng-container matColumnDef="isDone" class="mat-column">
+      <th mat-header-cell *matHeaderCellDef>isDone</th>
+      <td mat-cell *matCellDef="let el">{{ el.isDone }}</td>
+    </ng-container>
+    <ng-container matColumnDef="Action" class="mat-column">
+      <th mat-header-cell *matHeaderCellDef>Action</th>
+      <td mat-cell *matCellDef="let el" class="mat-column">
+        <button mat-raised-button color="primary" (click)="deleteTodo(el)">
+          <mat-icon>delete_outline</mat-icon>
+        </button>
+        <button mat-raised-button color="accent" (click)="editTodo(el)">
+          <mat-icon>create</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="['content', 'isDone', 'Action']"></tr>
+    <tr
+      mat-row
+      *matRowDef="let row; columns: ['content', 'isDone', 'Action']"
+    ></tr>
+  </table>
+</section>

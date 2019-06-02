@@ -1,0 +1,13 @@
+.box{
+  background: rgb(238, 237, 237);
+  .header{
+    display: flex;
+    .space{
+      flex: 1 1 auto;
+    }
+    .setting {
+      cursor: pointer;
+    }
+  }
+
+}

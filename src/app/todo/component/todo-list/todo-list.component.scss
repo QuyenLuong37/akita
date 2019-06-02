@@ -1,0 +1,49 @@
+mat-progress-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+
+.list-todos {
+  padding-top: 20px;
+  padding-bottom: 80px;
+  .search-box {
+    margin: 0 auto;
+    width: 500px;
+    padding-top: 20px;
+    mat-form-field {
+      width: 100%;
+    }
+  }
+  .filter-todos {
+    margin: 0 198px;
+    display: flex;
+    padding-bottom: 20px;
+    h4 {
+      margin: 0;
+      line-height: 63px;
+      padding-right: 27px;
+      color: teal;
+      font-size: 23px;
+    }
+  }
+  table {
+    margin: 0 auto;
+    tr {
+      th {
+        padding: 20px 40px;
+        font-size: 20px;
+        font-weight: 600;
+      }
+      td {
+        padding: 20px 40px;
+        button {
+          margin-right: 3px;
+        }
+      }
+    }
+  }
+}
+
+

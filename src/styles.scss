@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+.mat-button{
+  outline: none !important;
+}
+.mat-menu-item {
+  outline: none !important;
+}
+
+.snackBar{
+  background: purple;
+  color: #eee;
+  font-size: 21px;
+}
+
+.mat-select-value{
+  color: #1e8dfd !important;
+}

@@ -1,0 +1,14 @@
+.box-card {
+  max-width: 650px;
+  height: 100vh;
+  margin: 0 auto;
+  padding-top: 120px;
+  .todo-card{
+    max-height: 400px !important;
+    height: 400px;
+    .header-image {
+      background-image: url("http://lorempixel.com/400/200");
+      background-size: cover;
+    }
+  }
+}

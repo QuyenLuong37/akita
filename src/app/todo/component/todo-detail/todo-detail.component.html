@@ -1,0 +1,21 @@
+<div *ngIf="todoDetail$ | async as todo" class="box-card">
+  <h2>Detail</h2>
+  <mat-card class="todo-card">
+    <mat-card-header>
+      <div mat-card-avatar class="header-image"></div>
+      <mat-card-title>{{ todo.content }} </mat-card-title>
+      <mat-card-subtitle>{{ todo.id }}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, cum
+        ducimus maiores quas a dignissimos dolores iure ea eveniet officiis
+        dolor voluptatibus? Reprehenderit ipsum voluptate impedit sunt illum
+        nulla voluptatibus.
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" (click)="goBack()">Back</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

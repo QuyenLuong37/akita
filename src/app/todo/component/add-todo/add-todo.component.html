@@ -1,0 +1,38 @@
+<div class="add-todo">
+  <h1>Add ToDo</h1>
+  <form [formGroup]="addForm">
+    <mat-form-field>
+      <input
+        matInput
+        type="text"
+        placeholder="Things to do.."
+        formControlName="content"
+      />
+      <mat-error
+        *ngIf="
+          addForm.get('content')?.hasError('required') &&
+          addForm.get('content').touched
+        "
+        >Field must require</mat-error
+      >
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Status made: </mat-label>
+      <mat-select formControlName="isDone">
+        <mat-option>--</mat-option>
+        <mat-option [value]="true">True</mat-option>
+        <mat-option [value]="false">False</mat-option>
+      </mat-select>
+      <mat-error
+        *ngIf="
+          addForm.get('isDone')?.hasError('required') &&
+          addForm.get('content').touched
+        "
+        >Field must require</mat-error
+      >
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="addTodo(addForm)">
+      Add Todo
+    </button>
+  </form>
+</div>
