@@ -108,10 +108,10 @@ export class TodoListComponent implements OnInit {
       });
   }
 
-  // navigate(todo: Todo) {
-  //   this.store.setActive(todo.id);
-  //   this.router.navigate(["/todo", todo.id]);
-  // }
+  navigate(todo: Todo) {
+    this.store.setActive(todo.id);
+    this.router.navigate(["/todo-list", todo.id]);
+  }
 
   editTodo(todo: Todo): void {
     const dialogRef = this.dialog.open(TodoDialogComponent, {

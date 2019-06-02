@@ -25,8 +25,8 @@ export class TodoDetailComponent implements OnInit {
   ngOnInit() {
     this.todoDetail$ = this.query.selectActive();
     // this.query.selectActive().subscribe(v => console.log(v));
-    const id = this.route.snapshot.paramMap.get('id');
-    this.service.setActive(id);
+    // const id = this.route.snapshot.paramMap.get('id');
+    // this.service.setActive(id);
   }
 
   goBack(): void {

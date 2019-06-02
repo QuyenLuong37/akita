@@ -19,10 +19,10 @@
       <mat-option
         *ngFor="let todo of listSearchTodos"
         [value]="todo.content"
-        [routerLink]="todo.id"
+        (click)='navigate(todo)'
       >
         {{ todo.content }}
-      </mat-option>
+      </mat-option>  <!--[routerLink]="todo.id" -->
     </mat-autocomplete>
   </div>
   <div class="filter-todos">
