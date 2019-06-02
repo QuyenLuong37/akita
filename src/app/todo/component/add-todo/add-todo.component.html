@@ -31,7 +31,7 @@
         >Field must require</mat-error
       >
     </mat-form-field>
-    <button mat-raised-button color="primary" (click)="addTodo(addForm)">
+    <button mat-raised-button color="primary" [disabled]='addForm.invalid' (click)="addTodo(addForm)">
       Add Todo
     </button>
   </form>
