@@ -24,6 +24,7 @@ app.post("/data", (req, res) => {
 
 app.put("/data/:id", (req, res) => {
   const id = req.params["id"];
+  console.log(id);
   const { content, isDone } = req.body;
   // TODOs[id] = {
   //   ...TODOs[id],
@@ -39,7 +40,7 @@ app.put("/data/:id", (req, res) => {
 
 app.delete("/data/:id", (req, res) => {
   const id = req.params["id"];
-  TODOs.find((val, index) => {
+  TODOs.filter((val, index) => {
     if (val.id === id) {
       TODOs.splice(index, 1);
       res.status(200).json({ message: "Delete successful!" });

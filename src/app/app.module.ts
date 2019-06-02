@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { TodoDetailComponent } from './todo/component/todo-detail/todo-detail.component';
 import { TodoDialogComponent } from './todo/component/todo-dialog/todo-dialog.component';
 import { AddTodoComponent } from './todo/component/add-todo/add-todo.component';
+import { LoginComponent } from './login/login.component';
 // firebase.initializeApp(environment.firebase);
 
 @NgModule({
@@ -20,7 +21,8 @@ import { AddTodoComponent } from './todo/component/add-todo/add-todo.component';
     TodoListComponent,
     TodoDetailComponent,
     TodoDialogComponent,
-    AddTodoComponent
+    AddTodoComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
